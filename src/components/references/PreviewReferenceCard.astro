@@ -1,0 +1,19 @@
+---
+const props = Astro.props
+---
+
+<div class="reference__preview-card preview-card" style=`background-image: url(${props.image});`>
+</div>
+
+<style>
+  .reference__preview-card {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: red;
+    border-radius: 0.25rem;
+    flex: 0 0 auto;
+  }
+</style>

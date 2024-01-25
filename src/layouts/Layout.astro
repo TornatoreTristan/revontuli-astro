@@ -1,0 +1,66 @@
+---
+interface Props {
+	title: string;
+}
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	@import url("https://use.typekit.net/lhb8tjv.css");
+	body {
+		font-family: "area-normal", sans-serif;
+    font-weight: 400;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		color: #212A3D;
+		overflow-x: hidden;
+	}
+	a {
+		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	section {
+		padding: 2rem 5%;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		border-radius: 0.25rem;
+		font-weight: 700;
+		background-color: #212A3D;
+		color: #fff;
+	}
+	.link {
+		display: inline-block;
+		color: #212A3D;
+		font-weight: 700;
+		padding-bottom: 0.25rem;
+		border-bottom: 2px solid #212A3D;
+	}
+</style>

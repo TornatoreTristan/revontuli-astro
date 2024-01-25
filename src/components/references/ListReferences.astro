@@ -1,0 +1,116 @@
+---
+import PreviewReferenceCard from './PreviewReferenceCard.astro'
+import { getCollection, getEntry } from 'astro:content'
+const allReferences = await getCollection('references')
+console.log(allReferences)
+---
+
+<section>
+  <h2>Nos <span>(superbes)</span> Références</h2>
+  <div class="references-list">
+    {allReferences.map((reference) => (
+      <PreviewReferenceCard image={reference.data.image} />
+    ))}
+  </div> 
+  <div class="references-list_navigation">
+    <div class="scrollLeft arrow" id="scroll-left"><img src="arrow.svg" alt="arrow-left" width="20"></div>
+    <div class="scrollRight arrow" id="scroll-right"><img src="arrow.svg" alt="arrow-left" width="20"></div>
+  </div>
+</section>
+
+<script>
+function easeInOutQuad(t: number) {
+  return t < 0.5 ? 1.2 * t * t : -1 + (4 - 2 * t) * t;
+}
+
+function smoothScroll(element: any, target: number, duration: number) {
+  let start = element.scrollLeft,
+      change = target - start,
+      startTime = performance.now(),
+      val, now, elapsed, t;
+
+  function animateScroll() {
+    now = performance.now();
+    elapsed = (now - startTime) / 1000;
+    t = (elapsed / duration);
+
+    val = start + change * easeInOutQuad(t);
+    element.scrollLeft = val;
+
+    if (t < 1) {
+      requestAnimationFrame(animateScroll);
+    } else {
+      element.scrollLeft = target; // Assurez-vous que nous finissons exactement à notre destination
+    }
+  };
+
+  animateScroll();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollLeftButton = document.getElementById('scroll-left');
+  const scrollRightButton = document.getElementById('scroll-right');
+  const referencesList = document.querySelector('.references-list');
+  const referenceCards = referencesList?.querySelectorAll('.preview-card');
+
+  if (scrollLeftButton && scrollRightButton && referencesList && (referenceCards?.length ?? 0) > 0) {
+    const cardWidth = (referenceCards?.[0] as HTMLElement)?.offsetWidth + 20 ?? 0 ;
+
+    scrollLeftButton.addEventListener('click', () => {
+      smoothScroll(referencesList, referencesList.scrollLeft - cardWidth, 0.25); // Durée en secondes
+    });
+
+    scrollRightButton.addEventListener('click', () => {
+      smoothScroll(referencesList, referencesList.scrollLeft + cardWidth, 0.25); // Durée en secondes
+    });
+  }
+});
+</script>
+
+<style>
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .references-list {
+    margin: 2rem 0;
+    display: flex;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    gap: 20px;
+  }
+  .references-list::-webkit-scrollbar {
+  display: none;
+  }
+  .scrollLeft img {
+    transform: rotate(90deg);
+  }
+  .scrollRight img {
+    transform: rotate(-90deg);
+  }
+  .references-list_navigation {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .arrow {
+    cursor: pointer;
+    padding: 10px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+  }
+  .arrow:hover {
+    opacity: 0.5;
+  }
+</style>

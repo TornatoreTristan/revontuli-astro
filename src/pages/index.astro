@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderBackground from '../components/animatedBackground/HeaderBackground.astro';
+import ListReferences from '../components/references/ListReferences.astro';
+---
+
+<Layout title="Revontuli">
+	<main>
+		<HeaderBackground />
+		<section class="value-proposition">
+			<h2>Elever votre stratégie digitale au niveau supérieur et ne loupez plus jamais une opportunité de vendre en ligne avec votre site internet.</h2>
+		</section>
+		<ListReferences />
+	</main>
+</Layout>
+
+<style>
+	h2 {
+		font-size: 1.7rem;
+	}
+	.value-proposition {
+		padding: 4rem 5%;
+	}
+</style>
