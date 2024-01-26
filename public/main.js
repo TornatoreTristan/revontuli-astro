@@ -1,7 +1,7 @@
-import * as THREE from "/node_modules/three/build/three.module.js";
-import { EffectComposer } from "/node_modules/three/examples/jsm/postprocessing/EffectComposer";
-import { RenderPass } from "/node_modules/three/examples/jsm/postprocessing/RenderPass";
-import { ShaderPass } from "/node_modules/three/examples/jsm/postprocessing/ShaderPass";
+import * as THREE from "three";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 
 const vertexGradient = `
 uniform float uTime;
@@ -199,7 +199,6 @@ let colors = ["#FCC1A7", "#fff", "#FFE3D7", "#fff", "#FFE3D7"];
 
 // Convert to threejs colors
 colors = colors.map((color) => new THREE.Color(color));
-console.log(colors);
 
 /**
  * Scene
@@ -222,7 +221,6 @@ const gradient = new THREE.Mesh(
     side: THREE.DoubleSide,
   })
 );
-console.log(gradient);
 scene.add(gradient);
 
 /**
