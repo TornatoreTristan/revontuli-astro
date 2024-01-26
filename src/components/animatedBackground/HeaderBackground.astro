@@ -1,3 +1,8 @@
+---
+// import './main.js'
+---
+
+
 <section class="header-animated">
   <canvas id="canvas"></canvas>
   <h2>Studio créatif de sites wordpress</h2>
@@ -17,6 +22,8 @@
   }
   #canvas {
     position: absolute;
+    height: 100%;
+    width: 100%;
     top: -30%;
     left: 0;
     z-index: -1;
@@ -71,5 +78,7 @@
 </style>
 
 <script type="module">
-  import '../../../main.js'
+  document.addEventListener('DOMContentLoaded', () => {
+     import('./main.js')
+  });
 </script>

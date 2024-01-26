@@ -1,12 +1,7 @@
-import * as THREE from "three";
-// import vertexGradient from "/shaders/vertex.glsl";
-// import fragmentGradient from "/shaders/fragment.glsl";
-// import Stats from 'stats.js'
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
-// import vertexGrain from "/shaders/grain/vertex.glsl";
-// import fragmentGrain from "/shaders/grain/fragment.glsl";
+import * as THREE from "/node_modules/three/build/three.module.js";
+import { EffectComposer } from "/node_modules/three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPass } from "/node_modules/three/examples/jsm/postprocessing/RenderPass";
+import { ShaderPass } from "/node_modules/three/examples/jsm/postprocessing/ShaderPass";
 
 const vertexGradient = `
 uniform float uTime;
@@ -200,7 +195,7 @@ window.addEventListener("resize", () => {
 /**
  * Colors
  */
-let colors = ["#FCC1A7", "#fff", "#FFE3D7", "#fff", "#fff"];
+let colors = ["#FCC1A7", "#fff", "#FFE3D7", "#fff", "#FFE3D7"];
 
 // Convert to threejs colors
 colors = colors.map((color) => new THREE.Color(color));

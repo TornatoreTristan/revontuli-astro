@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const referenceCards = referencesList?.querySelectorAll('.preview-card');
 
   if (scrollLeftButton && scrollRightButton && referencesList && (referenceCards?.length ?? 0) > 0) {
-    const cardWidth = (referenceCards?.[0] as HTMLElement)?.offsetWidth + 20 ?? 0 ;
+    const cardWidth = (referenceCards?.[0] as HTMLElement)?.offsetWidth + 20 ;
 
     scrollLeftButton.addEventListener('click', () => {
       smoothScroll(referencesList, referencesList.scrollLeft - cardWidth, 0.25); // Durée en secondes
