@@ -1,12 +1,21 @@
 <footer>
-  <section>
-    <div>
-      <h2>Revontuli 🦊 <br /> Agence Web Wordpress</h2>
+  <section class="section-footer">
+    <div class="meta-info">
+      <h2>Revontuli 🦊<span>Agence Web Wordpress</span></h2>
       <p>Caen - Paris</p>
+      <p>Revontuli propose ses services pour vous aider à développer votre chiffre d'affaires et votre notoriété en ligne en développant des sites web optimisé pour favoriser vos conversions et établir des stratégies d'acquisition efficaces.</p>
+    </div>
+    <div class="meta-nav">
+      <h3>À propos</h3>
+      <ul>
+        <li>Nous contacter</li>
+        <li>Mentions légales</li>
+        <li>Politique de confidentialité</li>
+      </ul>
     </div>
   </section>
   <section class="copyright">
-    <p>2024 - Site réalisé par Revontuli</p>
+    <p>2024 - Design & Développement 100% Revontuli 🦊</p>
   </section>
 </footer>
 
@@ -14,7 +23,39 @@
   footer {
     text-align: center
   }
+  span {
+    font-size: 0.8rem;
+    display: block;
+  }
+  .meta-info {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 1rem;
+  }
   p {
     font-size: 0.8rem;
+  }
+  .meta-nav h3 {
+    margin-bottom: 10px;
+  }
+  .meta-nav {
+    font-size: 0.8rem;
+  }
+  @media screen and (min-width: 768px){
+    footer {
+      text-align: left;
+    }
+    .section-footer {
+      display: flex;
+      justify-content: space-between;
+    }
+    .meta-info {
+      max-width: 30%;
+      margin: 0 0;
+      padding: 0rem;
+    }
+    .copyright {
+      text-align: center;
+    }
   }
 </style>

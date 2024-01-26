@@ -2,14 +2,16 @@
 import PreviewReferenceCard from './PreviewReferenceCard.astro'
 import { getCollection, getEntry } from 'astro:content'
 const allReferences = await getCollection('references')
-console.log(allReferences)
 ---
 
-<section>
-  <h2>Nos <span>(superbes)</span> Références</h2>
+<section class="section-ref">
+  <div class="section-ref__header">
+    <h2>Nos derniers sites</h2>
+    <p>Chacun de nos projets est unique.<br /> Notre force, c'est de pouvoir développer des fonctionnalités complexes et de répondre à tous les challenges techniques que vous nous proposerais. Du site vitrine au e-commerce tout en passant par des multi-sites complexes</p>
+  </div>
   <div class="references-list">
     {allReferences.map((reference) => (
-      <PreviewReferenceCard image={reference.data.image} />
+      <PreviewReferenceCard ref={reference} />
     ))}
   </div> 
   <div class="references-list_navigation">
@@ -112,5 +114,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   .arrow:hover {
     opacity: 0.5;
+  }
+  @media screen and (min-width: 968px){
+    .section-ref {
+      display: flex;
+      position: relative;
+      margin: 8rem auto;
+      gap: 40px;
+    }
+    .section-ref__header {
+      flex: 0 0 40%;
+    }
+    p {
+      max-width: 400px;
+    }
+    .references-list_navigation {
+      position: absolute;
+      top: 60%;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .section-ref {
+      gap: 0;
+    }
+    .references-list_navigation {
+      position: absolute;
+      top: 50%;
+    }
+
   }
 </style>

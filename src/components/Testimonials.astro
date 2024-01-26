@@ -1,11 +1,14 @@
 <section>
-  <h2>Ils recommandent Revontuli</h2>
+  <div class="testimonials-section__header">
+    <h2>Ils recommandent Revontuli</h2>
+    <p>On adorerait que le prochain avis viennent de vous, alors on va tout faire pour vous satisfaire !</p>
+  </div>
   <div class="testimonials-list">
     <div class="testimonial">
       <div class="testimonial-content">
         <p>« Revontuli a développé 50 sites internet pour la FNPSL, et je suis extrêmement satisfaite de la qualité du travail fourni. Les sites sont superbes ! Ils sont à la fois esthétiques et fonctionnels, répondant parfaitement à nos besoins spécifiques. Ils ont su respecter les délais convenus tout en nous offrant un niveau de qualité supérieur. En parallèle du développement des sites internet, Revontuli a conçu une formation 100% personnalisée en e-learning sur WordPress rien que pour la FNPSL. Le contenu était clair, bien structuré et adapté. Je ne peux que recommander Revontuli !
 »</p>
-        <p class="testimonial-author">- Mélanie BOURGINAL, Référente numérique FNPSL </p>
+        <p class="testimonial-author"><img src="/img/melanie-fnpsl-creation-reseaux-multisites-wordpress-revontuli.jpeg" width="60" alt="melanie-fnpsl-creation-reseaux-multisites-wordpress-revontuli">Mélanie BOURGINAL<br />Référente numérique FNPSL </p>
       </div>
     </div>
     <div class="testimonial">
@@ -14,19 +17,19 @@
 Il est excellent dans ce qu'il fait (marketing digital, stratégie web, sites wordpress, SEO..) mais sa plus grande qualité c'est sa passion et sa capacité à la partager aux autres. Il est ouvert d'esprit et à réponse à tout. 
 
 »</p>
-        <p class="testimonial-author">- Antoine CIVEL, CEO d'Exupery Formation </p>
+        <p class="testimonial-author"><img src="/img/antoine-exupery-site-web-wordpress-revontuli.jpeg" width="60" alt="antoine-exupery-site-web-wordpress-revontuli">Antoine CIVEL<br />CEO d'Exupery Formation </p>
       </div>
     </div>
     <div class="testimonial">
       <div class="testimonial-content">
         <p>« J'ai eu l'occasion de travailler avec Revontuli dans le cadre une mission longue (près de 2 ans). Nous avons de prime abord choisi de travailler avec l'agence pour ses compétences en Data, Tracking et customisation de sites Wordpress. Points sur lesquels nous sommes totalement satisfaits ! Mais nous avons surtout découvert au fil du temps des qualités humaines exceptionnelles. Pédagogie, patience et efficacité. Je recommande chaleureusement ! Hâte de renouveler ! »</p>
-        <p class="testimonial-author">- Kélian LALLOUÉ, CEO de Hendy </p>
+        <p class="testimonial-author"><img src="/img/kelian-lalloue-hendy-site-vitrine-wordpress-revontuli.jpeg" width="60" alt="kelian-lalloue-hendy-site-vitrine-wordpress-revontuli">Kélian LALLOUÉ<br /> CEO de Hendy </p>
       </div>
     </div>
      <div class="testimonial">
       <div class="testimonial-content">
         <p>« Nous avions de gros problèmes avec notre site, impossibilité de mettre à jour, temps de chargement très long, personalisation quasiment impossible ... Revontuli a totalement refondu le site pour un résultat 10 fois plus chaleureux et moderne. Le site est toujours à jour, le temps de chargement rapide et le trafic augmente ! Un gros plus, c'est les conseils et l'accompagnement sur notre SEO et les campagnes Google Ads ! Tout est globalisé c'est beaucoup plus simple quand on ne maîtrise pas tous les aspects, je recommande !   »</p>
-        <p class="testimonial-author">- Charlotte HÉBERT, CEO du Prêt à Français </p>
+        <p class="testimonial-author"><img src="/img/charlotte-lepretafrancais-markeplace-wordpress-revontuli.jpeg" width="60" alt="charlotte-lepretafrancais-markeplace-wordpress-revontuli">Charlotte HÉBERT<br /> CEO du Prêt à Français </p>
       </div>
     </div>
   </div>
@@ -55,6 +58,42 @@ Il est excellent dans ce qu'il fait (marketing digital, stratégie web, sites wo
   }
 
   .testimonial-author {
-    text-align: right;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonial-author img {
+    display: block;
+    border-radius: 50%;
+  }
+  @media screen and (min-width: 768px){
+    section {
+      margin: 4rem 0;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    .testimonials-section__header p{
+      font-size: 1.4rem;
+      max-width: 600px;
+    }
+    .testimonials-list {
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .testimonial {
+      width: 42%;
+      padding: 0rem;
+    }
+    .testimonial p {
+      font-size: 0.8rem;
+    }
+  }
+  @media screen and (min-width: 1224px){
+    .testimonial {
+      width: 22%;
+      padding: 0rem;
+    }
   }
 </style>
