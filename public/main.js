@@ -1,7 +1,9 @@
-import * as THREE from "three";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import * as THREE from "../node_modules/three/build/three.module.js";
+import { EffectComposer } from "../node_modules/three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "../node_modules/three/examples/jsm/postprocessing/RenderPass.js";
+import { ShaderPass } from "../node_modules/three/examples/jsm/postprocessing/ShaderPass.js";
+
+console.log("test");
 
 const vertexGradient = `
 uniform float uTime;

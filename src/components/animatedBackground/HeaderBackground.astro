@@ -1,3 +1,5 @@
+---
+---
 <section class="header-animated">
   <canvas id="canvas"></canvas>
   <h2>Studio créatif de sites wordpress</h2>
@@ -9,6 +11,11 @@
   </div>
   <div class="customer-section"><p>+ de 400 clients accompagnés</p></div>
 </section>
+
+<script type="module" is:inline>
+  console.log('hello')
+  import './main.js';
+</script>
 
 <style>
   .header-animated {
@@ -72,8 +79,3 @@
 	}
 </style>
 
-<script type="module">
-  document.addEventListener('DOMContentLoaded', () => {
-     import('./main.js')
-  });
-</script>
