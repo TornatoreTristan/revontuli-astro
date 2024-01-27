@@ -90,7 +90,7 @@ void main()
     float noise = snoise(vec3(noiseCoord.x + uTime * 3.0, noiseCoord.y, uTime * 5.0));
     noise = max(0.0, noise);
     float tilt = -0.8 * uv.y;
-    float incline = uv.x * 0.01;
+    float incline = uv.x * 0.07;
     float offset = incline * mix(-0.25, 0.25, uv.y);
     vec3 pos = vec3(position.xy, position.z + noise * 0.3 + tilt + incline);
 
@@ -124,7 +124,7 @@ varying vec3 vColor;
 
 void main()
 {
-    gl_FragColor = vec4(vUv, 0.0, 1.0);
+    gl_FragColor = vec4(vUv, 1.0, 1.0);
     gl_FragColor = vec4(vColor, 1.0);
 }
 `;
@@ -161,13 +161,7 @@ varying vec2 vUv;
   }
 `;
 
-/**
- * Performances
- */
-// const stats = new Stats()
-// stats.showPanel(0)
-// document.body.appendChild(stats.dom)
-
+console.log("hello");
 /**
  * Canvas
  */
@@ -197,7 +191,7 @@ window.addEventListener("resize", () => {
 /**
  * Colors
  */
-let colors = ["#FCC1A7", "#fff", "#FFE3D7", "#fff", "#FFE3D7"];
+let colors = ["#ffddcd", "#fff", "#FFE3D7", "#fff", "#FFE3D7"];
 
 // Convert to threejs colors
 colors = colors.map((color) => new THREE.Color(color));

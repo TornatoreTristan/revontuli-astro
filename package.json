@@ -7,8 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "build:deps": "snowpack --include 'node_modules/three/examples/jsm/**/*.js' --dest public/vendor"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -21,7 +20,6 @@
     "vue": "^3.4.15"
   },
   "devDependencies": {
-    "@types/three": "^0.160.0",
-    "snowpack": "^3.8.8"
+    "@types/three": "^0.160.0"
   }
 }
