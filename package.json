@@ -16,7 +16,6 @@
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/vue": "^4.0.8",
     "astro": "^4.2.6",
-    "astro-min": "1.1.0-dev.4",
     "astro-robots-txt": "^1.0.0",
     "three": "^0.160.1",
     "typescript": "^5.3.3",
